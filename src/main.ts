@@ -43,7 +43,7 @@ const search = () => {
     ${URLs.map(({ name, url }) => {
       return `
         <span class="item">
-          <a href="${url + params.get('name')}" target="_blank">${name}</a>
+          <a href="${url + encodeURIComponent(params.get('name') || '')}" target="_blank">${name}</a>
         </span>
       `
     }).join('')}
